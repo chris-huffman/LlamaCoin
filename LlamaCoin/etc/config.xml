@@ -4,7 +4,10 @@
     <default>
         <payment>
             <classyllama_llamacoin>
+                <title>Llama Coin</title>
                 <model>ClassyLlama\LlamaCoin\Model\LlamaCoin</model>
+                <active>1</active>
+                <cctypes>AE,VI,MC,DI</cctypes>
             </classyllama_llamacoin>
         </payment>
     </default>
