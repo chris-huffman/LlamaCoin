@@ -1,6 +1,6 @@
 define([
         'jquery',
-        'Magento_Payment/js/view/payment/iframe'
+        'Magento_Payment/js/view/payment/cc-form'
     ],
     function ($, Component) {
         'use strict';
@@ -8,22 +8,6 @@ define([
         return Component.extend({
             defaults: {
                 template: 'ClassyLlama_LlamaCoin/payment/llamacoin'
-            },
-            placeOrderHandler: null,
-            validateHandler: null,
-
-            /**
-             * @param {Object} handler
-             */
-            setPlaceOrderHandler: function (handler) {
-                this.placeOrderHandler = handler;
-            },
-
-            /**
-             * @param {Object} handler
-             */
-            setValidateHandler: function (handler) {
-                this.validateHandler = handler;
             },
 
             context: function() {
