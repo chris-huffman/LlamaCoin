@@ -1,0 +1,12 @@
+{
+    "name": "classyllama/llamacoin",
+    "description": "An example module to demonstrate how to add a payment method in Magento 2.",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "ClassyLlama\\LlamaCoin\\": ""
+        }
+    }
+}

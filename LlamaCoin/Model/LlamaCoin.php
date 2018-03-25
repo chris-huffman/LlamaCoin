@@ -35,9 +35,7 @@ class LlamaCoin extends \Magento\Payment\Model\Method\Cc
             //make API request to credit card processor.
             $response = $this->makeCaptureRequest($request);
 
-            if(!$response) {
-                throw new \Magento\Framework\Exception\LocalizedException(__('Failed capture request.'));
-            }
+            //todo handle response
 
             //transaction is done.
             $payment->setIsTransactionClosed(1);
@@ -72,10 +70,6 @@ class LlamaCoin extends \Magento\Payment\Model\Method\Cc
             //check if payment has been authorized
             $response = $this->makeAuthRequest($request);
 
-            if(!$response) {
-                throw new \Magento\Framework\Exception\LocalizedException(__('Failed auth request.'));
-            }
-
         } catch (\Exception $e) {
             $this->debug($payment->getData(), $e->getMessage());
         }
@@ -108,22 +102,34 @@ class LlamaCoin extends \Magento\Payment\Model\Method\Cc
      *
      * @param $request
      * @return array
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function makeAuthRequest($request)
     {
-        //todo implement API call for auth request.
-        return ['transactionID' => 123];
+        $response = ['transactionId' => 123]; //todo implement API call for auth request.
+
+        if(!$response) {
+            throw new \Magento\Framework\Exception\LocalizedException(__('Failed auth request.'));
+        }
+
+        return $response;
     }
 
     /**
      * Test method to handle an API call for capture request.
      *
      * @param $request
-     * @return bool
+     * @return array
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function makeCaptureRequest($request)
     {
-        //todo implement API call for capture request.
-        return true;
+        $response = ['success']; //todo implement API call for capture request.
+
+        if(!$response) {
+            throw new \Magento\Framework\Exception\LocalizedException(__('Failed capture request.'));
+        }
+
+        return $response;
     }
 }
